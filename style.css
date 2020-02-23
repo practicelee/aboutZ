@@ -1,0 +1,329 @@
+/* Animation */
+@keyframes roll {
+    0% {
+        transform: translateY(0);
+
+    }
+
+    25% {
+        transform: translateY(-20%);
+    }
+
+    50% {
+        transform: translateY(-40%);
+    }
+
+    75% {
+        transform: translateY(-60%);
+    }
+
+   100% {
+    transform: translateY(-80%);
+
+    }
+}
+
+
+/* css.reset */
+body, h1, h2, H3, p, ul, dl, dd{
+    margin: 0;
+    padding:0;
+}
+
+li{
+    list-style-type: none;
+}
+
+h1, h2, h3{
+    font-size:100%;
+    font-weight:normal;
+    
+}
+h2{
+    font-family: 'Oswald';
+    letter-spacing: 0.4em;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+
+
+body {
+    background-color: rgb(177, 90, 90);
+    /* color: #999; */
+    background-image: url(images/sky.jpg);
+    background-size: contain;
+}
+
+.portrait{
+    background-image: url(images/profile4.jpg);
+    background-size: cover;
+    background-position: center;
+    padding-top:100%;
+
+}
+
+.profile{
+    padding: 7%;
+    min-height:1000px;
+   
+}
+
+.profile-header,
+.profile-section{
+    padding-bottom: 7%;
+
+}
+.profile-section h2{
+    border-top :3px solid orange;
+    font-size: 2em;
+    color: rgb(255, 255, 255);
+    
+    margin-bottom:30px;
+    
+    top:0;
+    font-family: 'Oswald';
+    letter-spacing: 0.4em;
+    
+}
+
+.profile-header{
+
+}
+
+.name {
+    font-size: 30px;
+    line-height: 1.5em;
+    /* font-style:italic; */
+    margin-bottom: 20px;
+    font-family: 'Trade Winds';
+    /* position: sticky; */
+    top: 0;
+    /* background-color: #111; */
+    /* box-shadow: 0 0 30px 30px #111; */
+    color:rgb(190, 190, 190)
+
+
+}
+
+.name-job{
+    display: inline-block;
+    /* background-color: rgb(238, 103, 103); */
+    vertical-align: top;
+    height: 1.7em;
+    overflow: hidden;
+    padding-right: 0.3em;
+    color: rgb(255, 255, 255);
+    position: relative; 
+    
+
+}
+
+.name-job::after{
+    content: ' ';
+    position: absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    /* border:1px solid red; */
+    margin-left: -1em;
+    /* box-shadow: inset 0 0 10px 10px #111; */
+    
+}
+
+.profile-header p{
+    
+    font-size: 16px;
+    color:rgb(252, 231, 183);
+    font-family: 'Slabo 27px' ;
+    letter-spacing: 2px;
+}
+
+.name-job-list{
+    animation-name: roll;
+    animation-duration:10s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    
+}
+
+.name-title{
+    font-size: 50px;
+    line-height: 1;
+    color: rgb(77, 134, 240);
+    position: relative;
+    letter-spacing: 3rem;
+    position:relative;
+    margin-bottom: 30px;
+    
+    
+}
+
+.icons{
+    float: right;
+    margin:30px 100px 0px 10px;
+
+}
+
+.icons a{
+    background-image: url(images/icons.png);
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    text-indent:-9999px;
+}
+
+.icons a.twitter{
+    background-position: left top;
+}
+
+.icons a.facebook{
+    background-position: center top;
+    margin-left: 10px;
+}
+
+.icons a.pinterest{
+    background-position: right top;
+    margin-left: 10px;
+}
+
+.icons a:hover {
+    background-position-y: bottom ;
+}
+
+
+
+.timeline{
+    font-size: 1.2rem;
+    
+}
+.timeline  li h3 {
+    color:orange;
+    float:left;
+    font-size:1.2rem;
+    letter-spacing:0.2em;
+    /* padding-top:0.3em; */
+    margin-right:0.5em;
+    border-top:2px dotted rgb(236,163,158);
+    margin-top:0.1em;
+    font-family: 'Ubuntu';
+
+}
+
+.timeline li{
+    padding-bottom:30px;
+}
+
+.timeline li:last-child{
+    padding:0;
+}
+
+.timeline p{
+    color:white;
+    font-family: 'Ubuntu';
+}
+
+.graph li{
+    background-color: dodgerblue;
+    color: rgb(241, 241, 241);
+    padding:0.5em;
+    margin:0.4em 0;
+    border-radius:50px;
+    box-sizing: border-box;
+    background: rgb(36,31,128);
+    background: linear-gradient(90deg, rgba(36,31,128,1) 0%, rgba(9,63,121,1) 38%, rgba(57,124,166,1) 64%, rgba(0,212,255,1) 100%);
+    font-family: 'Ubuntu';
+}
+
+.graph li::before{
+    content: attr(data-score);
+    float:right;
+}
+
+.graph li[data-score="100%"] { width:100%; }
+.graph li[data-score="90%"] { width:90%; }
+.graph li[data-score="80%"] { width:80%; }
+.graph li[data-score="70%"] { width:70%; }
+.graph li[data-score="60%"] { width:60%; }
+   
+
+.list {
+    font-size: 1.2rem;
+    font-family: 'Ubuntu';
+}
+.list dt{
+    border-top:2px dotted rgb(236,163,158);
+    color:orange;
+    float:left;
+    font-size:1.2rem;
+    letter-spacing:0.2em;
+    margin:10px 0 0 0;
+    
+    /* border:2px solid red; */
+    /* padding-top:0.3em; */
+    /* margin-right:0.5em; */
+    
+ 
+
+    
+}
+
+.list dd{
+    overflow:hidden;
+    color:white;
+    padding:10px 15px 15px;
+    /* border:1px solid red; */
+}
+
+.button{
+    font-size: 20px;
+    width:150px;
+    height:40px;
+    padding-top:20px;
+    color:white;
+    text-align: center ;
+    background-image: linear-gradient(to right, #7474BF 0%, #348AC7 51%, #7474BF 100%);
+    display: block;
+    border-radius: 30px;
+    font-family: 'Ubuntu';
+    
+    
+}
+.button:hover{
+    /* background-position: center; */
+    box-shadow: 3px 3px 20px rgba(25, 209, 255, 0.5);
+
+}
+
+@media ( min-width: 768px ) {
+    .portrait{
+        position: fixed;
+        left:0;
+        top:0;
+        width: 35vw;
+        height:110vh;
+        padding:0;
+    }
+
+    .profile{
+        margin-left: 35vw;
+    /* }
+    .timeline{
+        margin:0 -10px;
+    }
+    .timeline li{
+        width:50%;
+        padding:0 10px;
+        box-sizing: border-box;
+
+    }
+    /* .timeline li:nth-child(even){
+        margin-left: auto;
+        margin-top:-10px;
+        margin-bottom:-10px;
+    } */ */
+}
